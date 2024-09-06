@@ -1,0 +1,30 @@
+// Function to validate login
+function validateLogin() {
+    // Get the username and password values from the form
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const errorMessage = document.getElementById('error-message');
+
+    // Clear any previous error messages
+    errorMessage.textContent = '';
+
+    // Basic validation
+    if (username === '') {
+        errorMessage.textContent = 'Username cannot be empty';
+        return false;  // Prevent form submission
+    }
+    if (password === '') {
+        errorMessage.textContent = 'Password cannot be empty';
+        return false;  // Prevent form submission
+    }
+
+    // If both fields are filled, you can proceed with your login logic (e.g., API call)
+    // For now, let's assume a hardcoded username/password for demonstration
+    if (username === 'admin' && password === '1234') {
+        alert('Login successful!');
+        return true;  // Form can be submitted
+    } else {
+        errorMessage.textContent = 'Invalid username or password';
+        return false;  // Prevent form submission
+    }
+}
